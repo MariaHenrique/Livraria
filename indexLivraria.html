@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset="utf-8">
+		<title>Livraria</title>
+		<link rel="stylesheet" href="stylesLivraria.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<script src="livraria.js"></script>
+		<script src="db.js"></script>
+		
+	</head>
+	
+	<body>
+		<header>
+			<h1>Livraria P3</h1>
+		</header>
+		<div ng-app="Livraria" ng-controller="LivrariaController" class="items">
+			<div class="content_left">
+				<img src="{{book.capa}}"height="350" width="280"></img>
+			</div>
+			<div class="informationsBook">
+				<h2>{{book.titulo}}</h2>
+				<p>Autores: {{book.autores}}</p>
+				<p>Descrição: </p>
+				<p>{{book.descricao}}</p>
+				<p>Preço: <span>{{book.preco}}<span></p>
+			</div>
+			<hr>
+			<center>
+			<button ng-click="previous()">Anterior</button>
+			<button ng-click="next()">Próximo</button>
+			
+			<center>
+			
+		
+		</div>
+		
+	
+	</body>
+	
+<html>

@@ -16,25 +16,30 @@
 		</header>
 		<div ng-app="Livraria" ng-controller="LivrariaController" class="items">
 			<div class="content_left">
-				<img src="{{book.capa}}"height="350" width="280"></img>
+				<img src="{{book.photo}}"height="350" width="280"></img>
 			</div>
 			<div class="informationsBook">
-				<h2>{{book.titulo}}</h2>
-				<p>Autores: {{book.autores}}</p>
+				<h2>{{book.title}}</h2>
+				<p>Autores: {{book.authors}}</p>
 				<p>Descrição: </p>
-				<p>{{book.descricao}}</p>
-				<p>Preço: <span>{{book.preco}}<span></p>
+				<p>{{book.description}}</p>
+				<p>Preço: <span>{{book.price}}<span></p>
 			</div>
 			<hr>
 			<center>
 			<button ng-click="previous()">Anterior</button>
 			<button ng-click="next()">Próximo</button>
-			
-			<center>
-			
-		
+			</center>
+			<hr>
+			<div>
+				<h2>Comentários</h2>
+				<ul ng-repeat="comment in book.comments">
+					<li>Comment: {{comment}}</li>
+				</ul>
+				<textarea rows="4" cols="50" ng-model="comment"></textarea><br>
+				<button ng-click="addComment(comment)">Inserir comentário</button>
+			</div>
 		</div>
-		
 	
 	</body>
 	

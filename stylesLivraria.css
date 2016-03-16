@@ -18,6 +18,10 @@ span {
 	font-family: Georgia;
 	font-size: 24px;
 }
+
+li {
+	list-style-type: none;
+}
 .items {
 	margin: 30px;
 }

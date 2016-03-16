@@ -11,9 +11,16 @@
 			$scope.book = db[$scope.index];		
 		};
 		$scope.previous = function() {
-			$scope.indice = $scope.index == 0 ? db.length - 1 : $scope.index - 1;
+			$scope.index = $scope.index == 0 ? db.length - 1 : $scope.index - 1;
 			$scope.book = db[$scope.index];
 		};
+		
+		$scope.addComment = function(comment) {
+			$scope.book.comments.push(comment);
+		};
+		
+		
+		
 	});	
 
 })();

@@ -28,7 +28,7 @@ var db = [
 	authors:"Hearne, Kevin" , 
 	description:"Neste novo livro do cânone oficial, que se passa entre os episódios IV e V, mesmo estando longe de dominar completamente a Força, Luke Skywalker é peça fundamental nas estratégias da Aliança Rebelde, sendo usado como soldado, piloto e espião ao ser enviado para uma importante missão: resgatar das mãos do Império uma brilhante criptógrafa alienígena, conhecida por sua habilidade de decifrar até mesmo os sistemas de comunicação mais complicados." , 
 	photo:"http://images.livrariasaraiva.com.br/imagemnet/imagem.aspx/?pro_id=9269164&qld=90&l=370&a=-1" , 
-	preco:"R$ 31,90" ,
+	price:"R$ 31,90" ,
 	comments: []
 },
 { 

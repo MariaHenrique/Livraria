@@ -19,6 +19,11 @@
 			$scope.book.comments.push(comment);
 		};
 		
+		$scope.addBook = function(mtitle, mauthors, mdescription, mphoto, mprice, mcomments) {
+			db.push({title: mtitle, authors: mauthors, description: mdescription, photo: mphoto, price: mprice, comments: mcomments});
+		
+		}
+		
 		
 		
 	});	

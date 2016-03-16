@@ -38,6 +38,25 @@
 				</ul>
 				<textarea rows="4" cols="50" ng-model="comment"></textarea><br>
 				<button ng-click="addComment(comment)">Inserir comentário</button>
+				<hr>
+				<h2>Adicionar livro</h2>
+				<p>Título
+					<input type="text" ng-model="title"> 
+				</p>
+				<p>Autores 
+					<input type="text"  ng-model="authors">
+				</p>
+				<p>Descrição
+					<input type="text"  ng-model="description">
+				</p>
+				<p>Url da capa
+					<input type="text" ng-model="photo">
+				</p>
+				<p>Preço
+					<input type="text"ng-model="price">
+				</p><br>
+				<button ng-click="addBook(title, authors, description, photo, price, [])">Adicionar livro</button>
+				
 			</div>
 		</div>
 	

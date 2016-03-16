@@ -29,6 +29,8 @@
 			<center>
 			<button ng-click="previous()">Anterior</button>
 			<button ng-click="next()">Próximo</button>
+			<button id="myBtn">Adicionar livro</button>
+			<button id="myBtnEdit">Editar livro</button>
 			</center>
 			<hr>
 			<div>
@@ -36,30 +38,105 @@
 				<ul ng-repeat="comment in book.comments">
 					<li>Comment: {{comment}}</li>
 				</ul>
-				<textarea rows="4" cols="50" ng-model="comment"></textarea><br>
-				<button ng-click="addComment(comment)">Inserir comentário</button>
-				<hr>
-				<h2>Adicionar livro</h2>
-				<p>Título
-					<input type="text" ng-model="title"> 
-				</p>
-				<p>Autores 
-					<input type="text"  ng-model="authors">
-				</p>
-				<p>Descrição
-					<input type="text"  ng-model="description">
-				</p>
-				<p>Url da capa
-					<input type="text" ng-model="photo">
-				</p>
-				<p>Preço
-					<input type="text"ng-model="price">
-				</p><br>
-				<button ng-click="addBook(title, authors, description, photo, price, [])">Adicionar livro</button>
+				<textarea id="comment" rows="4" cols="50" ng-model="comment"></textarea><br>
 				
+				<button ng-click="addComment(comment)"> >Inserir comentário</button>
+			
+				<div id="myModal" class="modal">
+				  <div class="modal-content">
+					<span class="close">×</span>
+					<div class="modal-body">
+						<p><b>Adicionando livro</b></p>
+						<form>
+							<p>Title: 
+								<input type="text" ng-model="title">
+							</p>
+							<p>Authors:
+								<input type="text" ng-model="authors">
+							</p>
+							<p>Description:
+								<input type="text" ng-model="description">
+							</p>
+							<p>Url da capa:
+								<input type="text" ng-model="photo">
+							</p>
+							<p>Preço:
+								<input type="text" ng-model="price">
+							</p>
+							<button id="btnAdd" ng-click="addBook(title, authors, description, photo, price, [])">Adicionar livro</button>
+						</form>
+					</div>
+				  </div>
+				</div>
+				
+				<div id="myModalEdit" class="modal">
+				  <div class="modal-content">
+					<span class="closeEdit">×</span>
+					<div class="modal-body">
+						<p><b>Editando livro</b></p>
+						<form>
+							<p>Title: 
+								<input type="text" ng-model="ntitle">
+							</p>
+							<p>Authors:
+								<input type="text" ng-model="nauthors">
+							</p>
+							<p>Description:
+								<input type="text" ng-model="ndescription">
+							</p>
+							<p>Url da capa:
+								<input type="text" ng-model="nphoto">
+							</p>
+							<p>Preço:
+								<input type="text" ng-model="nprice">
+							</p>
+							<button id="btnEdit" ng-click="editBook(ntitle, nauthors, ndescription, nphoto, nprice)">Editar livro</button>
+						</form>
+					</div>
+				  </div>
+				</div>
 			</div>
 		</div>
-	
+		<script>
+			var modal = document.getElementById('myModal');
+			var btn = document.getElementById("myBtn");
+			var modalEdit = document.getElementById('myModalEdit');
+			var btnE = document.getElementById("myBtnEdit");
+			var btnEdit = document.getElementById("btnEdit");
+			var btnAction = document.getElementById("btnAdd");
+			var span = document.getElementsByClassName("close")[0];
+			var spanEdit = document.getElementsByClassName("closeEdit")[0];
+
+
+			btn.onclick = function() {
+				modal.style.display = "block";
+			}
+
+			btnAdd.onclick = function() {
+				modal.style.display = "none";
+			}
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+			spanEdit.onclick = function() {
+				modalEdit.style.display = "none";
+			}
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+				if (event.target == modalEdit) {
+					modalEdit.style.display = "none";
+				}
+			}
+			
+			btnE.onclick = function() {
+				modalEdit.style.display = "block";
+			}
+
+			btnEdit.onclick = function() {
+				modalEdit.style.display = "none";
+			}
+		</script>
 	</body>
-	
 <html>
